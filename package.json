@@ -1,0 +1,23 @@
+{
+  "name": "discobase",
+  "version": "1.0.2",
+  "description": "Discobase is a powerful Node.js package for creating customizable Discord buttons and embed templates. It simplifies the process of sending Discord embeds and buttons with dynamic interaction handling, making it easier to create engaging Discord bot experiences. Features include pre-made embed templates for success, info, warning, error messages, as well as the ability to easily manage button interactions with customizable styles, emojis, and IDs.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "buttons",
+    "embeds",
+    "discord.js",
+    "interactions",
+    "templates",
+    "nodejs"
+  ],
+  "author": "Ethical Programmer",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.0.0"
+  }
+}
