@@ -68,7 +68,7 @@ ButtonBase.attachListener(client);
 **Example 1: Creating a Button**
 ```js
 const { ButtonBase } = require('discobase');
-const { ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { ButtonStyle } = require('discord.js');
 
 const button = new ButtonBase()
     .setEmoji('👍')
@@ -79,28 +79,30 @@ const buttonRow = button.build();
 await interaction.reply({ components: [buttonRow] });
 ```
 
-**Example 2: Handle Button Interaction**
 
 ## Button Interaction Handling
 You can handle interactions for multiple or single buttons by registering them using `ButtonBase.registerButton()`:
+
+**Single Button Example:**
 ```js
+const { ButtonBase } = require('discobase');
+const { ButtonStyle } = require('discord.js');
 
-ButtonBase.registerButton('button1', button1);
-ButtonBase.registerButton('button2', button2);
+const button = new ButtonBase()
+    .setEmoji('👍')
+    .setStyle(ButtonStyle.Primary)
+    .setCustomId('button1'); 
 
-button1.onClick(async (interaction) => {
-    if (interaction.customId === 'button1') {
-        await interaction.reply('You clicked the first button!');
-    }
+const buttonRow = button.build();
+await interaction.reply({ components: [buttonRow] });
+
+ButtonBase.registerButton('button', button);
+
+button.onClick(async (interaction) => {
+    await interaction.reply('You clicked the first button!');
 });
 
-button2.onClick(async (btnInteraction) => {
-    if (btnInteraction.user.id === interaction.user.id) {
-        await btnInteraction.reply('You clicked this button!');
-    } else {
-        await btnInteraction.reply({ content: "This button isn't for you!", ephemeral: true });
-    }
-})
+
 ```
 
 ## Multiple Buttons
@@ -108,19 +110,32 @@ You can also send multiple buttons in the same message. Just create as many butt
 
 **Example: Multiple Buttons**
 ```js
+const { ButtonBase } = require('discobase');
+const { ButtonStyle } = require('discord.js');
+
 const button1 = new ButtonBase()
     .setEmoji('👍')
     .setStyle(ButtonStyle.Primary)
-    .setCustomId('button1');
+    .setCustomId('button1'); 
 
 const button2 = new ButtonBase()
-    .setEmoji('👎')
-    .setStyle(ButtonStyle.Secondary)
-    .setCustomId('button2');
+    .setEmoji('❌')
+    .setStyle(ButtonStyle.Danger)
+    .setCustomId('button2'); 
 
 const buttonRow = ButtonBase.build(button1, button2);
-
 await interaction.reply({ components: [buttonRow] });
+
+ButtonBase.registerButton('button1', button1);
+ButtonBase.registerButton('button2', button2);
+
+button1.onClick(async (interaction) => {
+    await interaction.reply('You clicked the first button!');
+});
+
+button2.onClick(async (interaction) => {
+    await interaction.reply('You clicked the second button!');
+});
 ```
 
 
