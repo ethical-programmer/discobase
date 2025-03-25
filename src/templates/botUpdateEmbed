@@ -1,0 +1,10 @@
+const { EmbedBuilder } = require('discord.js); 
+
+function actionRequireEmbed(message) { 
+    return new EmbedBuilder() 
+    .setColour('Yellow') 
+    .setDescription(`\`Emoji\` ${message}\nBot has been restarted!`); 
+} 
+
+module.exports = actionRequiredEmbed; 
+
