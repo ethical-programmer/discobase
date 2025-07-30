@@ -1,145 +1,58 @@
-# Discobase
+![Discobase Banner](https://i.ibb.co/HppNtvMj/disco.png)
 
-**Discobase** is a powerful and easy-to-use Node.js package that simplifies the process of creating Discord embeds and buttons for your bot. Whether you are building a community bot, a utility bot, or a game bot, Discobase provides pre-made templates for embeds and buttons, making it incredibly easy to send interactive messages to your server.
+# 🚀 Discobase
 
-## Features
+**Discobase** is your modern all-in-one toolkit for building **advanced Discord bots** with minimal effort.
 
-- **Pre-Made Embed Templates**: Create beautiful and customizable embeds for success, info, warning, error, and more.
-- **Button Interactions**: Easily create buttons with custom emojis, styles, and actions. Handle button clicks directly in your code without complex event handling.
-- **Minimal Code**: Focus on your bot’s logic and let Discobase handle the boilerplate embed and button creation.
-- **Customizable**: Customize embed content, colors, and buttons to suit your specific needs.
+> 📌 **Note:** This `discobase` package name is reserved to protect our brand.  
+> To get started, use our official CLI instead:  
+> 👉 **[`npx create-discobase@latest`](https://www.npmjs.com/package/create-discobase)**
 
-## Installation
+---
 
-To get started, you can install Discobase from npm:
+## ⚡ What is Discobase?
+
+**Discobase** is a **lightweight command and event handler** for Discord bots — with a **structured file system**, **dynamic loading**, and an optional **beautiful dashboard** for managing your bot’s stats, settings, and more.
+
+**Key Highlights:**
+- Supports **latest Discord.js v14**
+- **Modern Terminal**: Colorful logs for success, errors, info
+- **Auto Templates**: Pre-built files for commands & events
+- **Dynamic Reloading**: Hot updates without restarting
+- **Error Logging**: Automatic runtime error capture
+- **Discobase Dashboard**: Run locally to see bot stats, guilds, users, and manage settings like avatar, banner, and name
+- Supports both **Prefix & Slash Commands**
+- Smart **missing intents detection**
+- **Configurable Function Execution** for scheduled tasks
+- `generate` command to scaffold new commands & events
+
+---
+
+## ✅ Get Started in Seconds
 
 ```bash
-npm install discobase
+npx create-discobase@latest
 ```
+Official CLI: 👉 [npx create-discobase@latest](https://www.npmjs.com/package/create-discobase)
 
-## Usage
-### Create Embeds
-Discobase provides a set of predefined embed templates for you to use directly. You can customize each template with a message or other options.
+## 🚀 How it Works
+# Scaffold your bot project
+npx create-discobase@latest
 
-**Example 1: Success Embed**
-```js
-const { EmbedBase } = require('discobase');
+# Follow the prompts
+# Install dependencies
+# Run your bot!
 
-const embed = EmbedBase.create('success', 'Your operation was successful!');
-channel.send({ embeds: [embed] });
-```
-
-**Example 2: Info Embed**
-```js
-const { EmbedBase } = require('discobase');
-
-const embed = EmbedBase.create('info', 'This is some information!');
-channel.send({ embeds: [embed] });
-```
-
-## Available Embed Templates
-- Success: A green embed used to show successful actions.
-- Info: A blue embed for informational messages.
-- Warning: An orange embed for warnings.
-- Error: A red embed for error messages.
-- Neutral: A default white embed for neutral messages.
-- Action Required: A purple embed for actions that require user interaction.
+💬 Community & Support
+Got questions?
+Join our growing community for help & ideas!
+👉 [Join our Discord](https://discord.gg/t84eE89Mhk)
 
 
-**Example: Warning Embed**
-```js
-const { EmbedBase } = require('discobase');
+## 🛑 Why does this package exist?
+This `discobase` npm package is a placeholder to secure our brand name.
 
-const embed = EmbedBase.create('warning', 'This is a warning message!');
-channel.send({ embeds: [embed] });
-```
+Use the official CLI instead 👉 [npx create-discobase@latest](https://www.npmjs.com/package/create-discobase)
 
 
-## Create Buttons
-Discobase makes it simple to create buttons with custom actions. Here's how to create a button and send it along with an interaction handler.
-
-**First make sure to pass `client` to `ButtonBase`. You can do it in your main bot file.**
-```js
-const { ButtonBase } = require('discobase')
-ButtonBase.attachListener(client);
-```
-
-
-**Example 1: Creating a Button**
-```js
-const { ButtonBase } = require('discobase');
-const { ButtonStyle } = require('discord.js');
-
-const button = new ButtonBase()
-    .setEmoji('👍')
-    .setStyle(ButtonStyle.Primary)
-    .setCustomId('button1'); 
-
-const buttonRow = button.build();
-await interaction.reply({ components: [buttonRow] });
-```
-
-
-## Button Interaction Handling
-You can handle interactions for multiple or single buttons by registering them using `ButtonBase.registerButton()`:
-
-**Single Button Example:**
-```js
-const { ButtonBase } = require('discobase');
-const { ButtonStyle } = require('discord.js');
-
-const button = new ButtonBase()
-    .setEmoji('👍')
-    .setStyle(ButtonStyle.Primary)
-    .setCustomId('button1'); 
-
-const buttonRow = button.build();
-await interaction.reply({ components: [buttonRow] });
-
-ButtonBase.registerButton('button', button);
-
-button.onClick(async (interaction) => {
-    await interaction.reply('You clicked the first button!');
-});
-
-
-```
-
-## Multiple Buttons
-You can also send multiple buttons in the same message. Just create as many buttons as you need and use the Buttons.build() method to add them to a row.
-
-**Example: Multiple Buttons**
-```js
-const { ButtonBase } = require('discobase');
-const { ButtonStyle } = require('discord.js');
-
-const button1 = new ButtonBase()
-    .setEmoji('👍')
-    .setStyle(ButtonStyle.Primary)
-    .setCustomId('button1'); 
-
-const button2 = new ButtonBase()
-    .setEmoji('❌')
-    .setStyle(ButtonStyle.Danger)
-    .setCustomId('button2'); 
-
-const buttonRow = ButtonBase.build(button1, button2);
-await interaction.reply({ components: [buttonRow] });
-
-ButtonBase.registerButton('button1', button1);
-ButtonBase.registerButton('button2', button2);
-
-button1.onClick(async (interaction) => {
-    await interaction.reply('You clicked the first button!');
-});
-
-button2.onClick(async (interaction) => {
-    await interaction.reply('You clicked the second button!');
-});
-```
-
-
-## Contact
-If you have any questions or need support, feel free to reach out to us:
-- Discord : https://discord.gg/ethical-programmer-s-1188398653530984539
-
+⭐ Happy Building!
