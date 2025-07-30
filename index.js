@@ -13,3 +13,4 @@ This package is just a placeholder!
 to set up your Discord bot project with all features!
 ====================================================
 `);
+

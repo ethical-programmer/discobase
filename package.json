@@ -1,11 +1,18 @@
 {
   "name": "discobase",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Placeholder package for Discobase CLI. Please use npx create-discobase@latest",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "node postinstall.js"
   },
-  "keywords": ["discord", "cli", "bot", "handler", "discobase"],
+  
+  "keywords": [
+    "discord",
+    "cli",
+    "bot",
+    "handler",
+    "discobase"
+  ],
   "author": "Your Name",
   "license": "MIT"
 }
