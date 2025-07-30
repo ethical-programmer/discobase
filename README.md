@@ -37,15 +37,16 @@ Official CLI: 👉 [npx create-discobase@latest](https://www.npmjs.com/package/c
 
 ## 🚀 How it Works
 # Scaffold your bot project
-npx create-discobase@latest
+`npx create-discobase@latest`
 
-# Follow the prompts
-# Install dependencies
-# Run your bot!
+Follow the prompts<br>
+Install dependencies<br>
+Run your bot!
 
-💬 Community & Support
-Got questions?
-Join our growing community for help & ideas!
+
+# 💬 Community & Support
+Got questions? <br>
+Join our growing community for help & ideas!<br>
 👉 [Join our Discord](https://discord.gg/t84eE89Mhk)
 
 

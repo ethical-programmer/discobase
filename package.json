@@ -1,6 +1,6 @@
 {
   "name": "discobase",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Placeholder package for Discobase CLI. Please use npx create-discobase@latest",
   "scripts": {
     "postinstall": "node postinstall.js"
